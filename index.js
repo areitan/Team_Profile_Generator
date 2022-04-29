@@ -6,11 +6,38 @@ const Employee = require("./lib/employee");
 const Intern = require("./lib/intern");
 const Engineer = require("./lib/engineer");
 const Manager = require("./lib/manager");
+const Team = []
 
 
 
+const generateHTML = () =>{
+  let employeehtml = ``;
+  for (i=0; i<Team.length; i++){
+    let special = ``
+    if(Team[i].getRole()==="Manager"){
+      special = Team[i].getofficeNumber();
+    }
 
-const generateHTML = (data) =>
+    // if(Team[i].getRole()==="Manager"){
+    //   special = Team[i].getofficeNumber();
+    // }
+
+    // if(Team[i].getRole()==="Manager"){
+    //   special = Team[i].getofficeNumber();
+    // }
+
+   employeehtml = employeehtml+`
+   <div>
+   <h2>${Team[i].getName()}</h2>
+   <p>${Team[i].getRole()}</p>
+   <p>${Team[i].getid()}</p>
+   <p>${special}</p>
+
+   </div>
+   ` 
+  }
+}
+
   `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +50,6 @@ const generateHTML = (data) =>
 
 
 
-
-
-
-
 </body>
 </html>`;
 
@@ -34,17 +57,17 @@ inquirer
   .prompt([
     {
       type: "input",
-      name: "teamManager",
+      name: "managerName",
       message: "What is the team manager's name?",
     },
     {
       type: "input",
-      name: "id",
+      name: "managerId",
       message: "What is your employee ID?",
     },
     {
       type: "input",
-      name: "email",
+      name: "managerEmail",
       message: "What is your email address?",
     },
     {
@@ -52,12 +75,101 @@ inquirer
       name: "officeNumber",
       message: "What is your office number?",
     },
-  
   ])
-  .then((answers) => {
-    const htmlPageContent = generateHTML(data);
 
-    fs.writeFile("index.html", htmlPageContent, (err) =>
-      err ? console.log(err) : console.log("Successfully created index.html!")
-    );
-  });
+  .then((data) => {
+    const newManager = new Manager(data.managerName, data.managerId, data.managerEmail, data.officeNumber)
+    Team.push(newManager);
+    menu();
+  })
+
+function menu() {
+  console.log(Team);
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "choice",
+        message: "What would you like to do?",
+        choices: ["Add engineer", "Add intern", "Build Team Profile"]
+      },
+    ])
+    .then((data) => {
+      if (data.choice === "Add engineer") {
+        inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "engineerName",
+              message: "What is the engineer's name?",
+            },
+            {
+              type: "input",
+              name: "engineerId",
+              message: "What is your employee ID?",
+            },
+            {
+              type: "input",
+              name: "engineerEmail",
+              message: "What is your email address?",
+            },
+            {
+              type: "input",
+              name: "github",
+              message: "What is your GitHub username?",
+            },
+          ])
+
+          .then((data) => {
+            const newEngineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.github)
+            Team.push(newEngineer);
+            menu();
+
+          })
+      }
+      if (data.choice === "Add intern") {
+        inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "internName",
+              message: "What is the intern's name?",
+            },
+            {
+              type: "input",
+              name: "internId",
+              message: "What is your employee ID?",
+            },
+            {
+              type: "input",
+              name: "internEmail",
+              message: "What is your email address?",
+            },
+            {
+              type: "input",
+              name: "school",
+              message: "What is your school name?",
+            },
+          ])
+
+          .then((data) => {
+            const newIntern = new Intern(data.internName, data.internId, data.internEmail, data.school)
+            Team.push(newIntern);
+            menu();
+
+          })
+      }
+      if (data.choice==="Build Team Profile") {
+        generateHTML();
+      }
+
+    })
+}
+
+  // .then((data) => {
+  //   const htmlPageContent = generateHTML(data);
+
+  //   fs.writeFile("index.html", htmlPageContent, (err) =>
+  //     err ? console.log(err) : console.log("Successfully created index.html!")
+  //   );
+  // });
