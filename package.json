@@ -21,5 +21,8 @@
   "homepage": "https://github.com/areitan/Team_Profile_Generator#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^28.0.2"
   }
 }
