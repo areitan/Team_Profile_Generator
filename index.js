@@ -2,6 +2,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+const Employee = require("./lib/employee");
+const Intern = require("./lib/intern");
+const Engineer = require("./lib/engineer");
+const Manager = require("./lib/manager");
+
+
 
 
 const generateHTML = (data) =>
@@ -33,7 +39,7 @@ inquirer
     },
     {
       type: "input",
-      name: "employeeID",
+      name: "id",
       message: "What is your employee ID?",
     },
     {
@@ -43,7 +49,7 @@ inquirer
     },
     {
       type: "input",
-      name: "officeNum",
+      name: "officeNumber",
       message: "What is your office number?",
     },
   
