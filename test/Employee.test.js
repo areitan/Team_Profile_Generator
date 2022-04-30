@@ -16,5 +16,5 @@
 
 // getRole()—returns 'Employee'
 
-const Employee = require("./lib/employee");
+// const Employee = require("./lib/employee");
 

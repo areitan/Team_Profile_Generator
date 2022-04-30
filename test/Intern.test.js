@@ -6,6 +6,4 @@
 
 // getRole()—overridden to return 'Intern'
 
-const Employee = require("./employee");
-
-const intern = require("./lib/intern");
+// const Intern = require("./lib/intern");
