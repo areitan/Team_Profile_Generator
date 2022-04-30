@@ -22,20 +22,20 @@ This application generates a Team Profile ```HTML``` file given user input. [Inq
 ---
 ## Installation
 
-
+In order to run this program, open a Bash terminal navigate to the ```TEAM_PROFILE_GENERATOR``` project directory and run the code ```node index.js```.
 
 - [Team Profile Generator Git Hub Repository](https://github.com/areitan/Team_Profile_Generator)
-- [README Generator Walkthrough Video Link](********)
+- [Team Profile Generator Walkthrough Video Link](********)
 
 
 ---
 ## Usage
 
+The purpose of this exercise is to use ```node.js``` in a bash terminal to generate a team profile in an ```index.html``` file.
 
 
-
-### Initialization
-![Initializing the application](/assets/images/********.png)
+### Team Profile Mock-up Provided
+![Team Profile Mock-up](/assets/images/10-object-oriented-programming-homework-demo.png)
 
 
 
@@ -53,7 +53,7 @@ In order to create this application, I used the skills I have at the moment. I a
 ## Credits
 
 
-- [Coding Boot Camp: ](********)
+- [Jest: Using Matchers](https://jestjs.io/docs/using-matchers)
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 9 exercises.
 - Chris Baird, my tutor
 

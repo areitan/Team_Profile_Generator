@@ -16,25 +16,24 @@ const generateHTML = () => {
       special = Team[i].getofficeNumber();
     }
 
-    if(Team[i].getRole()==="Engineer"){
+    if (Team[i].getRole() === "Engineer") {
       special = Team[i].getGithub();
     }
 
-    if(Team[i].getRole()==="Intern"){
+    if (Team[i].getRole() === "Intern") {
       special = Team[i].getSchool();
     }
 
     employeeHTML = employeeHTML + `
-   <div>
+   <div class="card">
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
-   <p>${Team[i].getid()}</p>
+   <p>${Team[i].getId()}</p>
    <p>${special}</p>
-
    </div>
    `
   }
-}
+
 
 `<!DOCTYPE html>
 <html lang="en">
@@ -46,10 +45,11 @@ const generateHTML = () => {
 </head>
 <body>
 
+${employeeHTML}
 
 
 </body>
-</html>`;
+</html>`};
 
 inquirer
   .prompt([
@@ -149,7 +149,6 @@ function menu() {
               message: "What is your school name?",
             },
           ])
-
           .then((data) => {
             const newIntern = new Intern(data.internName, data.internId, data.internEmail, data.school)
             Team.push(newIntern);
@@ -159,15 +158,13 @@ function menu() {
       }
       if (data.choice === "Build Team Profile") {
         generateHTML();
+        // writeToFile();
       }
 
+    //   function writeToFile(Team) {
+    //     fs.writeFile("index.html", generateHTML(Team), (err) =>
+    //         err ? console.error(err) : console.log('Done')
+    //     );
+    // };
     })
 }
-
-  .then((data) => {
-    const htmlPageContent = generateHTML(data);
-
-    fs.writeFile("index.html", htmlPageContent, (err) =>
-      err ? console.log(err) : console.log("Successfully created index.html!")
-    );
-  });
