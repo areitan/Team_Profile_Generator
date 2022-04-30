@@ -8,25 +8,23 @@ const Engineer = require("./lib/engineer");
 const Manager = require("./lib/manager");
 const Team = []
 
-
-
-const generateHTML = () =>{
-  let employeehtml = ``;
-  for (i=0; i<Team.length; i++){
+const generateHTML = () => {
+  let employeeHTML = ``;
+  for (i = 0; i < Team.length; i++) {
     let special = ``
-    if(Team[i].getRole()==="Manager"){
+    if (Team[i].getRole() === "Manager") {
       special = Team[i].getofficeNumber();
     }
 
-    // if(Team[i].getRole()==="Manager"){
-    //   special = Team[i].getofficeNumber();
-    // }
+    if(Team[i].getRole()==="Engineer"){
+      special = Team[i].getGithub();
+    }
 
-    // if(Team[i].getRole()==="Manager"){
-    //   special = Team[i].getofficeNumber();
-    // }
+    if(Team[i].getRole()==="Intern"){
+      special = Team[i].getSchool();
+    }
 
-   employeehtml = employeehtml+`
+    employeeHTML = employeeHTML + `
    <div>
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
@@ -34,11 +32,11 @@ const generateHTML = () =>{
    <p>${special}</p>
 
    </div>
-   ` 
+   `
   }
 }
 
-  `<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -159,17 +157,17 @@ function menu() {
 
           })
       }
-      if (data.choice==="Build Team Profile") {
+      if (data.choice === "Build Team Profile") {
         generateHTML();
       }
 
     })
 }
 
-  // .then((data) => {
-  //   const htmlPageContent = generateHTML(data);
+  .then((data) => {
+    const htmlPageContent = generateHTML(data);
 
-  //   fs.writeFile("index.html", htmlPageContent, (err) =>
-  //     err ? console.log(err) : console.log("Successfully created index.html!")
-  //   );
-  // });
+    fs.writeFile("index.html", htmlPageContent, (err) =>
+      err ? console.log(err) : console.log("Successfully created index.html!")
+    );
+  });
