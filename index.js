@@ -19,6 +19,7 @@ const generateHTML = () => {
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
    <p>${Team[i].getId()}</p>
+   <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
    <p>[${special}](https://github.com/${special})</p>
    </div>
    `
@@ -31,6 +32,7 @@ const generateHTML = () => {
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
    <p>${Team[i].getId()}</p>
+   <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
    <p>${special}</p>
    </div>
    `
@@ -43,6 +45,7 @@ const generateHTML = () => {
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
    <p>${Team[i].getId()}</p>
+   <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
    <p>${special}</p>
    </div>
    `
@@ -57,8 +60,7 @@ const generateHTML = () => {
   //  </div>
   //  `
   }
-// FIX THIS
-// document.getElementById("").innerHTML =
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
