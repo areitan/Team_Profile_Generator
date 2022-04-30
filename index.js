@@ -14,17 +14,19 @@ const generateHTML = () => {
     let special = ``
     if (Team[i].getRole() === "Manager") {
       special = Team[i].getofficeNumber();
+      employeehtml = employeeHTML + `
+   <div class="card">
+   <h2>${Team[i].getName()}</h2>
+   <p>${Team[i].getRole()}</p>
+   <p>${Team[i].getId()}</p>
+   <p>[${special}](https://github.com/${special})</p>
+   </div>
+   `
     }
 
     if (Team[i].getRole() === "Engineer") {
       special = Team[i].getGithub();
-    }
-
-    if (Team[i].getRole() === "Intern") {
-      special = Team[i].getSchool();
-    }
-
-    employeeHTML = employeeHTML + `
+      employeehtml = employeeHTML + `
    <div class="card">
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
@@ -32,10 +34,32 @@ const generateHTML = () => {
    <p>${special}</p>
    </div>
    `
+    }
+
+    if (Team[i].getRole() === "Intern") {
+      special = Team[i].getSchool();
+      employeehtml = employeeHTML + `
+   <div class="card">
+   <h2>${Team[i].getName()}</h2>
+   <p>${Team[i].getRole()}</p>
+   <p>${Team[i].getId()}</p>
+   <p>${special}</p>
+   </div>
+   `
+    }
+
+  //  employeehtml = employeeHTML + `
+  //  <div class="card">
+  //  <h2>${Team[i].getName()}</h2>
+  //  <p>${Team[i].getRole()}</p>
+  //  <p>${Team[i].getId()}</p>
+  //  <p>${special}</p>
+  //  </div>
+  //  `
   }
-
-
-`<!DOCTYPE html>
+// FIX THIS
+// document.getElementById("").innerHTML =
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -44,10 +68,7 @@ const generateHTML = () => {
   <title>Team Profile</title>
 </head>
 <body>
-
-${employeeHTML}
-
-
+${employeehtml}
 </body>
 </html>`};
 
@@ -157,14 +178,14 @@ function menu() {
           })
       }
       if (data.choice === "Build Team Profile") {
-        generateHTML();
-        // writeToFile();
-      }
+        
+        writeFile();
+      };
 
-    //   function writeToFile(Team) {
-    //     fs.writeFile("index.html", generateHTML(Team), (err) =>
-    //         err ? console.error(err) : console.log('Done')
-    //     );
-    // };
+      function writeFile(data) {
+        fs.writeFile("index.html", generateHTML(data), (err) =>
+          err ? console.error(err) : console.log('Done')
+        );
+      };
     })
 }
