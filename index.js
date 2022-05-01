@@ -21,6 +21,7 @@ ${Team[i].getName()}
 <li class="list-group-item">${Team[i].getRole()}</li>
 <li class="list-group-item">${Team[i].getId()}</li>
 <li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<li class="list-group-item">${Team[i].getofficeNumber()}</li>
 </ul>
 </div>
 `
