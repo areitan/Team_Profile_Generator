@@ -33,9 +33,8 @@ describe("Engineer", () => {
         it("should create an object with a name, id, email, and officeNumber", () => {
             const engineer = new Engineer("Jane", "1", "jane@jane.com", "jane");
             // Verify that the new object has office nummber
-            expect(engineer.github).toEqual("M4-C123");
+            expect(engineer.github).toEqual("jane");
         });
-
     });
 
     it("should verify name", () => {
@@ -53,9 +52,9 @@ describe("Engineer", () => {
         expect(engineer.getEmail()).toEqual("jane@jane.com");      
     });
 
-    it("should verify email", () => {
+    it("should verify github", () => {
         const engineer = new Engineer("Jane", "1", "jane@jane.com", "jane");
-        expect(engineer.getGithub()()).toEqual("jane");      
+        expect(engineer.getGithub()).toEqual("jane");      
     });
 });
 

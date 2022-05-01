@@ -11,54 +11,53 @@ const Team = []
 const generateHTML = () => {
   let employeeHTML = ``;
   for (i = 0; i < Team.length; i++) {
-    let special = ``
+    // let special = ``
     if (Team[i].getRole() === "Manager") {
-      special = Team[i].getofficeNumber();
+      // special = Team[i].getofficeNumber();
       employeehtml = employeeHTML + `
    <div class="card">
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
    <p>${Team[i].getId()}</p>
    <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
-   <p>[${special}](https://github.com/${special})</p>
    </div>
    `
     }
 
     if (Team[i].getRole() === "Engineer") {
-      special = Team[i].getGithub();
+      // special = Team[i].getGithub();
       employeehtml = employeeHTML + `
    <div class="card">
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
    <p>${Team[i].getId()}</p>
    <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
-   <p>${special}</p>
+   <p>[${Team[i].getGithub()}](https://github.com/${Team[i].getGithub()})</p>
    </div>
    `
     }
 
     if (Team[i].getRole() === "Intern") {
-      special = Team[i].getSchool();
+      // special = Team[i].getSchool();
       employeehtml = employeeHTML + `
    <div class="card">
    <h2>${Team[i].getName()}</h2>
    <p>${Team[i].getRole()}</p>
    <p>${Team[i].getId()}</p>
    <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
-   <p>${special}</p>
+   <p>${Team[i].getSchool()}</p>
    </div>
    `
     }
 
-  //  employeehtml = employeeHTML + `
-  //  <div class="card">
-  //  <h2>${Team[i].getName()}</h2>
-  //  <p>${Team[i].getRole()}</p>
-  //  <p>${Team[i].getId()}</p>
-  //  <p>${special}</p>
-  //  </div>
-  //  `
+    //   employeehtml = employeeHTML + `
+    // <div class="card">
+    // <h2>${Team[i].getName()}</h2>
+    // <p>${Team[i].getRole()}</p>
+    // <p>${Team[i].getId()}</p>
+    // <p>${special}</p>
+    // </div>
+    // `
   }
 
   return `<!DOCTYPE html>
@@ -70,7 +69,9 @@ const generateHTML = () => {
   <title>Team Profile</title>
 </head>
 <body>
+<div class="container">
 ${employeehtml}
+<div>
 </body>
 </html>`};
 
@@ -105,7 +106,6 @@ inquirer
   })
 
 function menu() {
-  console.log(Team);
   inquirer
     .prompt([
       {
@@ -176,17 +176,16 @@ function menu() {
             const newIntern = new Intern(data.internName, data.internId, data.internEmail, data.school)
             Team.push(newIntern);
             menu();
-
+            console.log(Team);
           })
       }
       if (data.choice === "Build Team Profile") {
-        
         writeFile();
       };
 
       function writeFile(data) {
-        fs.writeFile("index.html", generateHTML(data), (err) =>
-          err ? console.error(err) : console.log('Done')
+        fs.writeFile("./dist/index.html", generateHTML(data), (err) =>
+          err ? console.error(err) : console.log('Your Team profile is complete')
         );
       };
     })

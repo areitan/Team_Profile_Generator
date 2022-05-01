@@ -42,7 +42,9 @@ The purpose of this exercise is to use ```node.js``` in a bash terminal to gener
 ---
 ## Tests
 
+Unit tests are preformed on this application by running ```npm run test``` in a bash terminal. 30 tests for array properties and methods are preformed and all pass.
 
+![Test Success](/assets/images/test_success.png)
 
 --- 
 ## Contribute

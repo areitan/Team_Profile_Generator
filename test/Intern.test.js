@@ -1,17 +1,13 @@
 // In addition to Employee's properties and methods, Intern subclass will also have the following:
-
 // school
-
 // getSchool()
-
 // getRole()—overridden to return 'Intern'
-
 
 const Intern = require("../lib/intern");
 
 describe("Intern", () => {
     // Test for all use cases when creating a new Intern
-    
+
     describe("Create", () => {
         it("should create an object with a name, id, email, and school", () => {
             const intern = new Intern("Jane", "1", "jane@jane.com", "UCLA");
@@ -41,24 +37,22 @@ describe("Intern", () => {
 
     it("should create an object with a name, id, email, and school", () => {
         const intern = new Intern("Jane", "1", "jane@jane.com", "UCLA");
-        expect(intern.getName()).toEqual("Jane");      
+        expect(intern.getName()).toEqual("Jane");
     });
 
     it("should create an object with a name, id, email, and school", () => {
         const intern = new Intern("Jane", "1", "jane@jane.com", "UCLA");
-        expect(intern.getId()).toEqual("1");      
+        expect(intern.getId()).toEqual("1");
     });
 
     it("should create an object with a name, id, email, and school", () => {
         const intern = new Intern("Jane", "1", "jane@jane.com", "UCLA");
-        console.log(intern)
         expect(intern.getEmail()).toEqual("jane@jane.com");
-          
     });
 
     it("should create an object with a name, id, email, and school", () => {
         const intern = new Intern("Jane", "1", "jane@jane.com", "UCLA");
-        expect(intern.getSchool()).toEqual("UCLA");      
+        expect(intern.getSchool()).toEqual("UCLA");
     });
 });
 

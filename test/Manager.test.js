@@ -1,9 +1,8 @@
 // In addition to Employee's properties and methods, Manager subclass will also have the following:
-
 // officeNumber
-
 // getRole()—overridden to return 'Manager'
 // based on week 10 exercise 16
+
 const Manager = require("../lib/manager");
 
 describe("Manager", () => {
