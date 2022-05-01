@@ -10,63 +10,56 @@ const Team = []
 
 const generateHTML = () => {
   let employeeHTML = ``;
-  for (i = 0; i < Team.length; i++) {
-    // let special = ``
-    if (Team[i].getRole() === "Manager") {
-      // special = Team[i].getofficeNumber();
-      employeehtml = employeeHTML + `
-   <div class="card">
-   <h2>${Team[i].getName()}</h2>
-   <p>${Team[i].getRole()}</p>
-   <p>${Team[i].getId()}</p>
-   <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
-   </div>
-   `
-    }
+for (i = 0; i < Team.length; i++) {
+if (Team[i].getRole() === "Manager") {
+  employeehtml = employeeHTML + `
+<div class="card">
+<h2>${Team[i].getName()}</h2>
+<ul>
+<li>${Team[i].getRole()}</li>
+<li>${Team[i].getId()}</li>
+<li><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+</ul>
+</div>
+`
+}
 
-    if (Team[i].getRole() === "Engineer") {
-      // special = Team[i].getGithub();
-      employeehtml = employeeHTML + `
-   <div class="card">
-   <h2>${Team[i].getName()}</h2>
-   <p>${Team[i].getRole()}</p>
-   <p>${Team[i].getId()}</p>
-   <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
-   <p>[${Team[i].getGithub()}](https://github.com/${Team[i].getGithub()})</p>
-   </div>
-   `
-    }
+if (Team[i].getRole() === "Engineer") { employeehtml = employeeHTML + `
+<div class="card">
+<h2>${Team[i].getName()}</h2>
+<ul>
+<li>${Team[i].getRole()}</li>
+<li>${Team[i].getId()}</li>
+<li><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<li>[${Team[i].getGithub()}](https://github.com/${Team[i].getGithub()})</li>
+</ul>
+</div>
+`
+}
 
-    if (Team[i].getRole() === "Intern") {
-      // special = Team[i].getSchool();
-      employeehtml = employeeHTML + `
-   <div class="card">
-   <h2>${Team[i].getName()}</h2>
-   <p>${Team[i].getRole()}</p>
-   <p>${Team[i].getId()}</p>
-   <p><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></p>
-   <p>${Team[i].getSchool()}</p>
-   </div>
-   `
-    }
-
-    //   employeehtml = employeeHTML + `
-    // <div class="card">
-    // <h2>${Team[i].getName()}</h2>
-    // <p>${Team[i].getRole()}</p>
-    // <p>${Team[i].getId()}</p>
-    // <p>${special}</p>
-    // </div>
-    // `
+if (Team[i].getRole() === "Intern") {
+  employeehtml = employeeHTML + `
+<div class="card">
+<h2>${Team[i].getName()}</h2>
+<ul>
+<li>${Team[i].getRole()}</li>
+<li>${Team[i].getId()}</li>
+<li><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<li>${Team[i].getSchool()}</li>
+</ul>
+</div>
+`
   }
+}
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Team Profile</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./dist/style.css">
+<title>Team Profile</title>
 </head>
 <body>
 <div class="container">
@@ -176,7 +169,6 @@ function menu() {
             const newIntern = new Intern(data.internName, data.internId, data.internEmail, data.school)
             Team.push(newIntern);
             menu();
-            console.log(Team);
           })
       }
       if (data.choice === "Build Team Profile") {
