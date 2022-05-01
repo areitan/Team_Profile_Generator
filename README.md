@@ -22,7 +22,7 @@ This application generates a Team Profile ```HTML``` file given user input. [Inq
 ---
 ## Installation
 
-In order to run this program, open a Bash terminal navigate to the ```TEAM_PROFILE_GENERATOR``` project directory and run the code ```node index.js```.
+In order to run this program, open a Bash terminal navigate to the ```TEAM_PROFILE_GENERATOR``` project directory and initialize the app using the code ```node index.js```. This app uses [Jest](https://www.npmjs.com/package/jest) for testing and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting user input.
 
 - [Team Profile Generator Git Hub Repository](https://github.com/areitan/Team_Profile_Generator)
 - [Team Profile Generator Walkthrough Video Link](********)
@@ -31,18 +31,32 @@ In order to run this program, open a Bash terminal navigate to the ```TEAM_PROFI
 ---
 ## Usage
 
-The purpose of this exercise is to use ```node.js``` in a bash terminal to generate a team profile in an ```index.html``` file.
+The purpose of this exercise is to use [Jest](https://www.npmjs.com/package/jest) for testing and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting user input in a command line app initialized by ```node.js``` in a bash terminal. After the user has selected "Build Team Profile", a team profile is created in an ```index.html``` file.
 
 
 ### Team Profile Mock-up Provided
 ![Team Profile Mock-up](/assets/images/10-object-oriented-programming-homework-demo.png)
 
+### Initialization
+![Initialization](/assets/images/1node.png)
+
+### Add A Manager
+![Add A Manager](/assets/images/2Manager.png)
+
+### Add An Engineer
+![Add An Engineer](/assets/images/3engineer.png)
+
+### Add An Intern
+![Add An Intern](/assets/images/4intern.png)
+
+### Generate A Team Profile
+![Generate A Team Profile](/assets/images/5generate_profile.png)
 
 
 ---
 ## Tests
 
-Unit tests are preformed on this application by running ```npm run test``` in a bash terminal. 30 tests for array properties and methods are preformed and all pass.
+Unit tests are preformed using ```jest.js``` on this application by running ```npm run test``` in a bash terminal. 30 tests to verify for array properties and methods are preformed and all pass.
 
 ![Test Success](/assets/images/test_success.png)
 
@@ -56,7 +70,7 @@ In order to create this application, I used the skills I have at the moment. I a
 
 - [LearnWebCode: JavaScript Template Literals: JSON to HTML](https://www.youtube.com/watch?v=DG4obitDvUA)
 - [Jest: Using Matchers](https://jestjs.io/docs/using-matchers)
-- Trilogy Education Services, LLC for the starter code and example code throughout the week 9 exercises.
+- Trilogy Education Services, LLC for the starter code and example code throughout the week 10 exercises and example mock-up.
 - Chris Baird, my tutor
 
 ### Questions
