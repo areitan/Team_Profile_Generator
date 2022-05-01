@@ -68,6 +68,7 @@ In order to create this application, I used the skills I have at the moment. I a
 ---
 ## Credits
 
+- [W3 Schools: HTML Links](https://www.w3schools.com/html/html_links)
 - [LearnWebCode: JavaScript Template Literals: JSON to HTML](https://www.youtube.com/watch?v=DG4obitDvUA)
 - [Jest: Using Matchers](https://jestjs.io/docs/using-matchers)
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 10 exercises and example mock-up.

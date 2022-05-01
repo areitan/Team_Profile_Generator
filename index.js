@@ -12,9 +12,9 @@ const generateHTML = () => {
   let employeeHTML = ``;
 for (i = 0; i < Team.length; i++) {
 if (Team[i].getRole() === "Manager") {
-  employeehtml = employeeHTML + `
+  employeeHTML = employeeHTML + `
 <div class="card" style="width: 18rem;">
-<div class="card-header">
+<div class="card-header bg-primary text-white">
 ${Team[i].getName()}
 </div>
 <ul class="list-group list-group-flush">
@@ -28,14 +28,15 @@ ${Team[i].getName()}
 }
 
 if (Team[i].getRole() === "Engineer") { 
-  employeehtml = employeeHTML + `
+  employeeHTML = employeeHTML + `
   <div class="card" style="width: 18rem;">
-  <div class="card-header">
+  <div class="card-header bg-primary text-white">
   ${Team[i].getName()}
   </div>
   <ul class="list-group list-group-flush">
   <li class="list-group-item">${Team[i].getRole()}</li>
   <li class="list-group-item">${Team[i].getId()}</li>
+  <li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
   <li class="list-group-item"><a href = "https://github.com/${Team[i].getGithub()}>Git Hub</a></li>
   </ul>
   </div>
@@ -43,14 +44,15 @@ if (Team[i].getRole() === "Engineer") {
 }
 
 if (Team[i].getRole() === "Intern") {
-  employeehtml = employeeHTML + `
+  employeeHTML = employeeHTML + `
   <div class="card" style="width: 18rem;">
-  <div class="card-header">
+  <div class="card-header bg-primary text-white">
   ${Team[i].getName()}
   </div>
   <ul class="list-group list-group-flush">
   <li class="list-group-item">${Team[i].getRole()}</li>
   <li class="list-group-item">${Team[i].getId()}</li>
+  <li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
   <li class="list-group-item">${Team[i].getSchool()}</li>
   </ul>
   </div>
@@ -70,12 +72,12 @@ if (Team[i].getRole() === "Intern") {
 <header>
 <div class="jumbotron jumbotron-fluid">
 <div class="container">
-  <h1 class="display-4">Meet Our Team</h1>
-  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+<h1 class="display-4">Meet Our Team</h1>
+<p class="lead">Exciting things are happening!</p>
 </div>
 </div>
 <div class="container">
-${employeehtml}
+${employeeHTML}
 <div>
 </body>
 </html>`};
@@ -184,7 +186,7 @@ function menu() {
           })
       }
       if (data.choice === "Build Team Profile") {
-        writeFile();
+        writeFile(Team);
       };
 
       function writeFile(data) {
