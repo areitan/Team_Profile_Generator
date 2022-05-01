@@ -13,15 +13,15 @@ const generateHTML = () => {
 for (i = 0; i < Team.length; i++) {
 if (Team[i].getRole() === "Manager") {
   employeeHTML = employeeHTML + `
-<div class="card" style="width: 18rem;">
-<div class="card-header bg-primary text-white">
+<div class="card col-s-12 col-m-4 m-3" style="width: 18rem;">
+<div class="card-header bg-primary text-white font-weight-bold">
 ${Team[i].getName()}
 </div>
 <ul class="list-group list-group-flush">
-<li class="list-group-item">${Team[i].getRole()}</li>
-<li class="list-group-item">${Team[i].getId()}</li>
-<li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
-<li class="list-group-item">${Team[i].getofficeNumber()}</li>
+<li class="list-group-item font-weight-bold">${Team[i].getRole()}</li>
+<li class="list-group-item">ID: ${Team[i].getId()}</li>
+<li class="list-group-item">Email: <a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<li class="list-group-item">Office Number: ${Team[i].getofficeNumber()}</li>
 </ul>
 </div>
 `
@@ -29,15 +29,15 @@ ${Team[i].getName()}
 
 if (Team[i].getRole() === "Engineer") {
     employeeHTML = employeeHTML + `
-<div class="card" style="width: 18rem;">
-<div class="card-header bg-primary text-white">
+<div class="card col-s-12 col-m-4 m-3" style="width: 18rem;">
+<div class="card-header bg-primary text-white font-weight-bold">
 ${Team[i].getName()}
 </div>
 <ul class="list-group list-group-flush">
-<li class="list-group-item">${Team[i].getRole()}</li>
-<li class="list-group-item">${Team[i].getId()}</li>
-<li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
-<li class="list-group-item"><a href = "https://github.com/${Team[i].getGithub()}" target="_blank" rel="noopener noreferrer">Git Hub</a></li>
+<li class="list-group-item font-weight-bold">${Team[i].getRole()}</li>
+<li class="list-group-item">ID: ${Team[i].getId()}</li>
+<li class="list-group-item">Email: <a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<li class="list-group-item">GitHub: <a href = "https://github.com/${Team[i].getGithub()}" target="_blank" rel="noopener noreferrer">${Team[i].getGithub()}</a></li>
 </ul>
 </div>
 `
@@ -45,15 +45,15 @@ ${Team[i].getName()}
 
 if (Team[i].getRole() === "Intern") {
   employeeHTML = employeeHTML + `
-<div class="card" style="width: 18rem;">
-<div class="card-header bg-primary text-white">
+<div class="card col-s-12 col-m-4 m-3" style="width: 18rem;">
+<div class="card-header bg-primary text-white font-weight-bold">
 ${Team[i].getName()}
 </div>
 <ul class="list-group list-group-flush">
-<li class="list-group-item">${Team[i].getRole()}</li>
-<li class="list-group-item">${Team[i].getId()}</li>
-<li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
-<li class="list-group-item">${Team[i].getSchool()}</li>
+<li class="list-group-item font-weight-bold">${Team[i].getRole()}</li>
+<li class="list-group-item">ID: ${Team[i].getId()}</li>
+<li class="list-group-item">Email: <a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<li class="list-group-item">Education: ${Team[i].getSchool()}</li>
 </ul>
 </div>
 `
@@ -70,13 +70,13 @@ ${Team[i].getName()}
 </head>
 <body>
 <header>
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid bg-primary text-white">
 <div class="container">
 <h1 class="display-4">Meet Our Team</h1>
 <p class="lead">Exciting things are happening!</p>
 </div>
 </div>
-<div class="container-fluid">
+<div class="container row mx-auto">
 ${employeeHTML}
 </div>
 </body>
