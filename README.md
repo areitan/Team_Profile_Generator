@@ -25,7 +25,7 @@ This application generates a Team Profile ```HTML``` file given user input. [Inq
 In order to run this program, open a Bash terminal navigate to the ```TEAM_PROFILE_GENERATOR``` project directory and initialize the app using the code ```node index.js```. This app uses [Jest](https://www.npmjs.com/package/jest) for testing and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting user input.
 
 - [Team Profile Generator Git Hub Repository](https://github.com/areitan/Team_Profile_Generator)
-- [Team Profile Generator Walkthrough Video Link](********)
+- [Team Profile Generator Walkthrough Video Link](https://drive.google.com/file/d/1g5jCev9P6KtSrnee9WpiLV1jh25YpQS9/view)
 
 
 ---
@@ -37,20 +37,29 @@ The purpose of this exercise is to use [Jest](https://www.npmjs.com/package/jest
 ### Team Profile Mock-up Provided
 ![Team Profile Mock-up](/assets/images/10-object-oriented-programming-homework-demo.png)
 
-### Initialization
-![Initialization](/assets/images/1node.png)
+### Initialization: ```node index.js```
+![Initialization](/assets/images/1_node.png)
 
-### Add A Manager
-![Add A Manager](/assets/images/2Manager.png)
+### Follow The Prompts: Add A Manager
+![Add A Manager](/assets/images/2_Manager.png)
 
-### Add An Engineer
-![Add An Engineer](/assets/images/3engineer.png)
+### Follow The Prompts: Build The Team
+![Build The Team](/assets/images/3_BuildTheTeam.png)
 
-### Add An Intern
-![Add An Intern](/assets/images/4intern.png)
+### Open The Profile From The Generated ```index.html``` File
+![Open The Profile](/assets/images/4_OpenTheProfile.png)
 
-### Generate A Team Profile
-![Generate A Team Profile](/assets/images/5generate_profile.png)
+### View The Profile
+![View The Profile](/assets/images/5_ViewProfile.png)
+
+### Click The Link: Send An Email
+![Open An Email](/assets/images/6_Email.png)
+
+### Click The Link: Open A GitHub Profile
+![Open A GitHub Profile](/assets/images/7_ClickGitHub.png)
+
+### View The GitHub Profile
+![View The GitHub Profile](/assets/images/8_GitHub.png)
 
 
 ---
@@ -58,7 +67,7 @@ The purpose of this exercise is to use [Jest](https://www.npmjs.com/package/jest
 
 Unit tests are preformed using ```jest.js``` on this application by running ```npm run test``` in a bash terminal. 30 tests to verify for array properties and methods are preformed and all pass.
 
-![Test Success](/assets/images/test_success.png)
+![Test Success](/assets/images/9_test_success.png)
 
 --- 
 ## Contribute
@@ -68,10 +77,9 @@ In order to create this application, I used the skills I have at the moment. I a
 ---
 ## Credits
 
-- [W3 Schools: HTML Links](https://www.w3schools.com/html/html_links)
-- [freeCodeCamp: How to Use HTML to Open a Link in a New Tab]https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/)
-- [LearnWebCode: JavaScript Template Literals: JSON to HTML](https://www.youtube.com/watch?v=DG4obitDvUA)
-- [Jest: Using Matchers](https://jestjs.io/docs/using-matchers)
+- [W3 Schools: HTML Links](https://www.w3schools.com/html/html_links.asp)
+- [freeCodeCamp: How to Use HTML to Open a Link in a New Tab](https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/)
+- [Jest: Getting Started](https://jestjs.io/docs/getting-started)
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 10 exercises and example mock-up.
 - Chris Baird, my tutor
 
