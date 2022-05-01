@@ -13,41 +13,46 @@ const generateHTML = () => {
 for (i = 0; i < Team.length; i++) {
 if (Team[i].getRole() === "Manager") {
   employeehtml = employeeHTML + `
-<div class="card">
-<h2>${Team[i].getName()}</h2>
-<ul>
-<li>${Team[i].getRole()}</li>
-<li>${Team[i].getId()}</li>
-<li><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<div class="card" style="width: 18rem;">
+<div class="card-header">
+${Team[i].getName()}
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">${Team[i].getRole()}</li>
+<li class="list-group-item">${Team[i].getId()}</li>
+<li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
 </ul>
 </div>
 `
 }
 
-if (Team[i].getRole() === "Engineer") { employeehtml = employeeHTML + `
-<div class="card">
-<h2>${Team[i].getName()}</h2>
-<ul>
-<li>${Team[i].getRole()}</li>
-<li>${Team[i].getId()}</li>
-<li><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
-<li>[${Team[i].getGithub()}](https://github.com/${Team[i].getGithub()})</li>
-</ul>
-</div>
+if (Team[i].getRole() === "Engineer") { 
+  employeehtml = employeeHTML + `
+  <div class="card" style="width: 18rem;">
+  <div class="card-header">
+  ${Team[i].getName()}
+  </div>
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item">${Team[i].getRole()}</li>
+  <li class="list-group-item">${Team[i].getId()}</li>
+  <li class="list-group-item"><a href = "https://github.com/${Team[i].getGithub()}>Git Hub</a></li>
+  </ul>
+  </div>
 `
 }
 
 if (Team[i].getRole() === "Intern") {
   employeehtml = employeeHTML + `
-<div class="card">
-<h2>${Team[i].getName()}</h2>
-<ul>
-<li>${Team[i].getRole()}</li>
-<li>${Team[i].getId()}</li>
-<li><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
-<li>${Team[i].getSchool()}</li>
-</ul>
-</div>
+  <div class="card" style="width: 18rem;">
+  <div class="card-header">
+  ${Team[i].getName()}
+  </div>
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item">${Team[i].getRole()}</li>
+  <li class="list-group-item">${Team[i].getId()}</li>
+  <li class="list-group-item">${Team[i].getSchool()}</li>
+  </ul>
+  </div>
 `
   }
 }
@@ -57,11 +62,17 @@ if (Team[i].getRole() === "Intern") {
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="./dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <title>Team Profile</title>
 </head>
 <body>
+<header>
+<div class="jumbotron jumbotron-fluid">
+<div class="container">
+  <h1 class="display-4">Meet Our Team</h1>
+  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+</div>
+</div>
 <div class="container">
 ${employeehtml}
 <div>
