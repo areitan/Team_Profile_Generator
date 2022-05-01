@@ -93,17 +93,17 @@ inquirer
     {
       type: "input",
       name: "managerId",
-      message: "What is your employee ID?",
+      message: "What is their employee ID?",
     },
     {
       type: "input",
       name: "managerEmail",
-      message: "What is your email address?",
+      message: "What is their email address?",
     },
     {
       type: "input",
       name: "officeNumber",
-      message: "What is your office number?",
+      message: "What is their office number?",
     },
   ])
 
@@ -130,22 +130,22 @@ function menu() {
             {
               type: "input",
               name: "engineerName",
-              message: "What is the engineer's name?",
+              message: "What is this engineer's name?",
             },
             {
               type: "input",
               name: "engineerId",
-              message: "What is your employee ID?",
+              message: "What is their employee ID?",
             },
             {
               type: "input",
               name: "engineerEmail",
-              message: "What is your email address?",
+              message: "What is their email address?",
             },
             {
               type: "input",
               name: "github",
-              message: "What is your GitHub username?",
+              message: "What is their GitHub username?",
             },
           ])
 
@@ -162,22 +162,22 @@ function menu() {
             {
               type: "input",
               name: "internName",
-              message: "What is the intern's name?",
+              message: "What is this intern's name?",
             },
             {
               type: "input",
               name: "internId",
-              message: "What is your employee ID?",
+              message: "What is their employee ID?",
             },
             {
               type: "input",
               name: "internEmail",
-              message: "What is your email address?",
+              message: "What is their email address?",
             },
             {
               type: "input",
               name: "school",
-              message: "What is your school name?",
+              message: "What is their school name?",
             },
           ])
           .then((data) => {
