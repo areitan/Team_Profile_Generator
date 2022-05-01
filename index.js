@@ -27,38 +27,38 @@ ${Team[i].getName()}
 `
 }
 
-if (Team[i].getRole() === "Engineer") { 
-  employeeHTML = employeeHTML + `
-  <div class="card" style="width: 18rem;">
-  <div class="card-header bg-primary text-white">
-  ${Team[i].getName()}
-  </div>
-  <ul class="list-group list-group-flush">
-  <li class="list-group-item">${Team[i].getRole()}</li>
-  <li class="list-group-item">${Team[i].getId()}</li>
-  <li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
-  <li class="list-group-item"><a href = "https://github.com/${Team[i].getGithub()}>Git Hub</a></li>
-  </ul>
-  </div>
+if (Team[i].getRole() === "Engineer") {
+    employeeHTML = employeeHTML + `
+<div class="card" style="width: 18rem;">
+<div class="card-header bg-primary text-white">
+${Team[i].getName()}
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">${Team[i].getRole()}</li>
+<li class="list-group-item">${Team[i].getId()}</li>
+<li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<li class="list-group-item"><a href = "https://github.com/${Team[i].getGithub()}" target="_blank" rel="noopener noreferrer">Git Hub</a></li>
+</ul>
+</div>
 `
 }
 
 if (Team[i].getRole() === "Intern") {
   employeeHTML = employeeHTML + `
-  <div class="card" style="width: 18rem;">
-  <div class="card-header bg-primary text-white">
-  ${Team[i].getName()}
-  </div>
-  <ul class="list-group list-group-flush">
-  <li class="list-group-item">${Team[i].getRole()}</li>
-  <li class="list-group-item">${Team[i].getId()}</li>
-  <li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
-  <li class="list-group-item">${Team[i].getSchool()}</li>
-  </ul>
-  </div>
+<div class="card" style="width: 18rem;">
+<div class="card-header bg-primary text-white">
+${Team[i].getName()}
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">${Team[i].getRole()}</li>
+<li class="list-group-item">${Team[i].getId()}</li>
+<li class="list-group-item"><a href = "mailto: ${Team[i].getEmail()}">${Team[i].getEmail()}</a></li>
+<li class="list-group-item">${Team[i].getSchool()}</li>
+</ul>
+</div>
 `
   }
-}
+};
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -76,11 +76,12 @@ if (Team[i].getRole() === "Intern") {
 <p class="lead">Exciting things are happening!</p>
 </div>
 </div>
-<div class="container">
+<div class="container-fluid">
 ${employeeHTML}
-<div>
+</div>
 </body>
-</html>`};
+</html>`
+};
 
 inquirer
   .prompt([
